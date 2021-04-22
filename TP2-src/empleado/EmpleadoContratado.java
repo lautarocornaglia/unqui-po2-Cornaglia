@@ -2,8 +2,8 @@ package empleado;
 
 public class EmpleadoContratado extends Empleado{
 
-	int numeroContrato;
-	String medioDePago;
+	private int numeroContrato;
+	private String medioDePago;
 	
 	public EmpleadoContratado() {
 		this.numeroContrato = 0;
@@ -27,7 +27,7 @@ public class EmpleadoContratado extends Empleado{
 	}
 
 	public float calcularSueldoBruto() {
-		float sueldoBruto = this.sueldoBasico;
+		float sueldoBruto = this.getSueldoBasico();
 		return sueldoBruto;
 	}
 

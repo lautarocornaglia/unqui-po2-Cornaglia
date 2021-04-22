@@ -8,8 +8,8 @@ import empleado.Empleado;
 
 public class Empresa {
 	
-	String nombre;
-	int CUIT;
+	private String nombre;
+	private int CUIT;
 	ArrayList<ReciboDeHaberes> listaDeReciboDeSueldos;
 	ArrayList<Empleado> listaDeEmpleados;
 	

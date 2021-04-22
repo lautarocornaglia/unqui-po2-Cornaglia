@@ -2,8 +2,8 @@ package empleado;
 
 public class EmpleadoPermanente extends Empleado{
 
-    int cantidadDeHijos;
-    int antiguedad;
+	private int cantidadDeHijos;
+	private int antiguedad;
 
     public EmpleadoPermanente() {
         this.cantidadDeHijos = 0;
@@ -27,24 +27,24 @@ public class EmpleadoPermanente extends Empleado{
     }
 
     public float calcularSueldoBruto() {
-        float sueldoBruto = this.sueldoBasico + this.salarioFamiliar() + (50 * this.antiguedad);
+        float sueldoBruto = this.getSueldoBasico() + this.salarioFamiliar() + (50 * this.getAntiguedad());
         return sueldoBruto;
     }
 
     private float salarioFamiliar() {
 
         float cobroFamiliar= 0;
-        if (this.estadoCivil == "Casado") {
-            cobroFamiliar = this.cantidadDeHijos * 150 + 100;
+        if (this.getEstadoCivil() == "Casado") {
+            cobroFamiliar = this.getCantidadDeHijos() * 150 + 100;
         }else {
-            cobroFamiliar = this.cantidadDeHijos * 150;
+            cobroFamiliar = this.getCantidadDeHijos() * 150;
         }
 
         return cobroFamiliar;
     }
 
 	public float calcularRetenciones() {
-		float retenciones =(float) ((0.10 * this.calcularSueldoBruto()) + (20 * this.cantidadDeHijos) + (0.15 * this.calcularSueldoBruto()));
+		float retenciones =(float) ((0.10 * this.calcularSueldoBruto()) + (20 * this.getCantidadDeHijos()) + (0.15 * this.calcularSueldoBruto()));
 		return retenciones;
 	}
 

@@ -4,8 +4,8 @@ import java.time.LocalDate;
 
 public class EmpleadoTemporal extends Empleado {
 
-    LocalDate fechaDeFin;
-    int cantDeHorasExtras;
+    private LocalDate fechaDeFin;
+    private int cantDeHorasExtras;
 
 
     public EmpleadoTemporal() {
@@ -30,12 +30,12 @@ public class EmpleadoTemporal extends Empleado {
     }
 
     public Integer cobroDeHorasExtras() {
-        int pagoDeHorasExtras = this.cantDeHorasExtras * 40;
+        int pagoDeHorasExtras = this.getCantDeHorasExtras() * 40;
         return pagoDeHorasExtras;
     }
 
     public float calcularSueldoBruto() {
-        float sueldoBruto = this.sueldoBasico + this.cobroDeHorasExtras();
+        float sueldoBruto = this.getSueldoBasico() + this.cobroDeHorasExtras();
         return sueldoBruto;
     }
 

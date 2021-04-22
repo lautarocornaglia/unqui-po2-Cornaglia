@@ -6,11 +6,11 @@ import java.time.format.DateTimeFormatter;
 
 public abstract class Empleado {
 
-    String nombre;
-    String direccion;
-    String estadoCivil;
-    LocalDate fechaDeNacimiento;
-    float sueldoBasico;
+	private String nombre;
+	private String direccion;
+	private String estadoCivil;
+	private LocalDate fechaDeNacimiento;
+	private float sueldoBasico;
 
     public Empleado() {
         this.nombre="Undefined post";
