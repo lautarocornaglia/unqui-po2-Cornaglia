@@ -1,5 +1,6 @@
 package empresa;
 
+import java.time.LocalDate;
 import java.util.ArrayList;
 
 import ReciboDeHaberes.ReciboDeHaberes;
@@ -62,6 +63,39 @@ public class Empresa {
         }
         return totalDeRetenciones;
     }
+
+
+	public float montoTotalDeSueldoNeto() {
+		float totalDeSueldoNeto = 0;
+        for(int i=0; i< this.listaDeEmpleados.size() ; i++) {
+        	totalDeSueldoNeto = totalDeSueldoNeto + this.listaDeEmpleados.get(i).calcularSueldoNeto();
+
+        }
+        return totalDeSueldoNeto;
+	}
+
+
+	public float montoTotalDeSueldoBruto() {
+		float totalDeSueldoBruto = 0;
+        for(int i=0; i< this.listaDeEmpleados.size() ; i++) {
+        	totalDeSueldoBruto = totalDeSueldoBruto + this.listaDeEmpleados.get(i).calcularSueldoBruto();
+
+        }
+        return totalDeSueldoBruto;
+	}
+	
+	public void liquidacionDeSueldos() {
+		for (int i=0; i < this.listaDeEmpleados.size(); i++) {
+			String nombreDeEmpleado = this.listaDeEmpleados.get(i).getNombre();
+			String direccion = this.listaDeEmpleados.get(i).getDireccion();
+			float sueldoNeto = this.listaDeEmpleados.get(i).calcularSueldoNeto();
+			float sueldoBruto = this.listaDeEmpleados.get(i).calcularSueldoBruto();
+			LocalDate fechaDeEmision = LocalDate.now();
+			ReciboDeHaberes recibo = new ReciboDeHaberes(nombreDeEmpleado, direccion, sueldoNeto, sueldoBruto, fechaDeEmision);
+			this.listaDeReciboDeSueldos.add(recibo);
+		}
+	}
+
 	
 }
 

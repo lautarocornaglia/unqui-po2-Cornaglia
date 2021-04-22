@@ -14,7 +14,6 @@ import empleado.EmpleadoTemporal;
 class EmpresaTestCase {
 
 	private Empresa empresa;
-	
 	private EmpleadoTemporal empleadoTemporal;
 	private EmpleadoPermanente empleadoPermanente;
 	private EmpleadoContratado empleadoContratado;
@@ -41,6 +40,8 @@ class EmpresaTestCase {
         this.empleadoPermanente.setAntiguedad(0);
 
         this.empleadoContratado.setSueldoBasico(1000);
+        
+        this.empresa.liquidacionDeSueldos(); 
 	}
  	
 	@Test
@@ -49,5 +50,21 @@ class EmpresaTestCase {
     	assertEquals(790, this.empresa.montoTotalDeRetenciones());
     }
 	
+	@Test
 	
+	public void testCalcularMontoTotalDeSueldoNeto() {
+    	assertEquals(3110, this.empresa.montoTotalDeSueldoNeto());
+    }
+	
+	@Test
+
+	public void testCalcularMontoTotalDeSueldoBruto() {
+		assertEquals(3900, this.empresa.montoTotalDeSueldoBruto());
+	}
+	
+	@Test
+	
+	public void testLiquidacionesDeHaberes() {
+		assertEquals(this.empresa.listaDeEmpleados.size(),this.empresa.listaDeReciboDeSueldos.size());
+	}
 }
