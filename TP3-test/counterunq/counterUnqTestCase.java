@@ -152,6 +152,10 @@ private Multioperador multioperador;
     void testRestaDeNumeros() {
     	assertEquals(-5, this.multioperador.restaDeNumeros());
     }
+    
+    //Ejercicio 5 
+    
+    /*1.  */
 }
 
 
