@@ -4,6 +4,8 @@ import java.util.ArrayList;
 
 public class Counter {
 	
+	//Ejercicio 1
+	
 	ArrayList<Integer> listaDeNumeros;
 
 	public Counter() {
@@ -32,5 +34,8 @@ public class Counter {
 		return cantNumerosImpares;
 	}
 
-
+	//Ejercicio 2	
+	
+	
+	
 }
