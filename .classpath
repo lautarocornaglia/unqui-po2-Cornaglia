@@ -6,6 +6,8 @@
 	<classpathentry kind="src" path="TP2-test"/>
 	<classpathentry kind="src" path="TP3-src"/>
 	<classpathentry kind="src" path="TP3-test"/>
+	<classpathentry kind="src" path="TP4-src"/>
+	<classpathentry kind="src" path="TP4-test"/>
 	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER"/>
 	<classpathentry kind="con" path="org.eclipse.jdt.junit.JUNIT_CONTAINER/5"/>
 	<classpathentry kind="output" path="bin"/>

@@ -5,10 +5,16 @@ import static org.junit.jupiter.api.Assertions.*;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
+import Point.Point;
+
 class counterUnqTestCase {
 
 private Counter counter;
 private Multioperador multioperador;    
+private Point punto;
+private Point puntoDeSuma;
+
+
     
     /**
      * Crea un escenario de test básico, que consiste en un contador 
@@ -44,8 +50,12 @@ private Multioperador multioperador;
  	multioperador.addNumber(5);
  	multioperador.addNumber(1);
  	multioperador.addNumber(4);
+ 	
+ 	//Ejercicio 6
+ 	
+    this.punto = new Point(0 , 0);
+    this.puntoDeSuma = new Point(0 , 0);
     }
-    
     
    	//Ejercicio 2
    	String a = "abc";
@@ -58,7 +68,7 @@ private Multioperador multioperador;
 	Integer ejemplo2Ej3;
 	
 	
-	
+    
 	
     //Ejercicio 1
     /**
@@ -155,7 +165,50 @@ private Multioperador multioperador;
     
     //Ejercicio 5 
     
-    /*1.  */
+    /*1. En el sistema de archivos estan organizado los paquetes model.gui y el model.stack estan dentro del paquete model */
+    /*2. Son iguales*/
+    
+    //Ejercicio 6 
+    
+    @Test
+    
+    void testPuntoSinValores() {
+    	
+    	assertEquals(0, this.punto.getX()); 
+    	assertEquals(0, this.punto.getY()); 
+    }
+    
+    @Test
+    
+    void testPuntoIndicado() {
+    	this.punto.moverPuntos(1, 2);
+    	assertEquals(1, this.punto.getX()); 
+    	assertEquals(2, this.punto.getY()); 
+    }
+    
+    @Test
+    
+    void testPuntoSumadoAOtroPuntoSinValores() {
+    	this.punto.moverPuntos(1, 2);
+    	this.punto.sumarPunto(this.puntoDeSuma);
+    	assertEquals(1, this.punto.getX()); 
+    	assertEquals(2, this.punto.getY()); 
+    }
+    
+    @Test
+    
+    void testPuntoSumadoAOtroPunto() {
+    	this.punto.moverPuntos(1, 2);
+    	this.puntoDeSuma.moverPuntos(3, 3);
+    	this.punto.sumarPunto(this.puntoDeSuma);
+    	assertEquals(4, this.punto.getX()); 
+    	assertEquals(5, this.punto.getY()); 
+    }
+    
+    //Ejercicio 7
+    
+    
+    
 }
 
 
