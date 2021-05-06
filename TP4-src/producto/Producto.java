@@ -32,5 +32,15 @@ public class Producto {
 		}
 		
 		
+		public Producto(Integer precioDelProducto, Integer stockDelProducto) {
+			setPrecio(precioDelProducto);
+			setStock(stockDelProducto);		
+		}
+		
+		public float calcularPrecioConDesc() {
+			float precioFinal = this.getPrecio();
+			
+			return precioFinal; 
+		}
 		
 }
