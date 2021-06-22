@@ -15,23 +15,6 @@ public class Point {
 		this.alto = 0;
 	}
 	
-	public float getAlto() {
-		return alto;
-	}
-
-	public void setAlto(float alto) {
-		this.alto = alto;
-	}
-
-	public float getLargo() {
-		return largo;
-	}
-
-	public void setLargo(float largo) {
-		this.largo = largo;
-	}
-
-	
 	public int getX() {
 		return x;
 	}

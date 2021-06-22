@@ -6,6 +6,8 @@ import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
 import Point.Point;
+import ar.edu.unq.po2.prueba.Punto;
+import rectangulo.Rectangulo;
 
 class counterUnqTestCase {
 
@@ -55,6 +57,12 @@ private Point puntoDeSuma;
  	
     this.punto = new Point(0 , 0);
     this.puntoDeSuma = new Point(0 , 0);
+    
+  //Ejercicio 7
+	
+  	punto = new Point(2,2);
+  	rectangulo = new Rectangulo(punto, 2, 3);
+  	
     }
     
    	//Ejercicio 2
@@ -66,9 +74,9 @@ private Point puntoDeSuma;
 	
 	int ejemplo1Ej3;
 	Integer ejemplo2Ej3;
+	private Object rectangulo;
 	
-	
-    
+	   
 	
     //Ejercicio 1
     /**
@@ -169,14 +177,14 @@ private Point puntoDeSuma;
     /*2. Son iguales*/
     
     //Ejercicio 6 
-    
+    /*
     @Test
     
     void testPuntoSinValores() {
     	
     	assertEquals(0, this.punto.getX()); 
     	assertEquals(0, this.punto.getY()); 
-    }
+    }*/
     
     @Test
     
@@ -207,7 +215,31 @@ private Point puntoDeSuma;
     
     //Ejercicio 7
     
-    
+   /* @Test
+	void testRectangulo() {
+    	Punto valorEsperado = ((Object) this.rectangulo).puntoEspejo.getY();
+		assertEquals(5,valorEsperado);
+	}*/
+	
+	@Test
+	
+	void testObtenerArea() {
+		assertEquals(6,((Rectangulo) this.rectangulo).obtenerArea());
+	}
+	
+	@Test
+	
+	void testObtenerPerimetro() {
+		assertEquals(10, ((Rectangulo) this.rectangulo).obtenerPerimetro());		
+		
+	}
+	
+	@Test
+	
+	void testFormaDelRectangulo() {
+		assertEquals("Es vertical",((Rectangulo) this.rectangulo).formaDelRectangulo());
+		
+	}
     
 }
 
